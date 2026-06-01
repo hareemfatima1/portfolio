@@ -32,25 +32,27 @@
   /* CUSTOM CURSOR */
   .cursor {
     position: fixed;
-    width: 10px; height: 10px;
+    width: 6px; height: 6px;
     background: var(--gold);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
     transform: translate(-50%, -50%);
-    transition: transform 0.1s ease;
-    mix-blend-mode: difference;
   }
   .cursor-ring {
     position: fixed;
-    width: 36px; height: 36px;
+    width: 18px; height: 18px;
     border: 1px solid var(--gold);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9998;
     transform: translate(-50%, -50%);
-    transition: all 0.15s ease;
-    opacity: 0.6;
+    transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+    opacity: 0.5;
+  }
+  .cursor-ring.hover {
+    width: 24px; height: 24px;
+    opacity: 0.8;
   }
 
   /* NOISE OVERLAY */
@@ -746,10 +748,8 @@
   #contact {
     padding: 8rem 4rem;
     background: var(--dark);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: start;
+    max-width: 800px;
+    margin: 0 auto;
   }
 
   .contact-info h2 {
@@ -801,55 +801,7 @@
     line-height: 1.5;
   }
 
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
-  .form-label {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-  }
-  .form-input, .form-textarea {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(184,150,110,0.15);
-    color: var(--cream);
-    padding: 0.9rem 1.2rem;
-    font-family: 'Barlow', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 300;
-    outline: none;
-    transition: border-color 0.3s;
-    resize: none;
-  }
-  .form-input:focus, .form-textarea:focus {
-    border-color: var(--gold);
-  }
-  .form-input::placeholder, .form-textarea::placeholder { color: rgba(122,114,104,0.5); }
 
-  .form-submit {
-    font-family: 'Barlow Condensed', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    background: var(--gold);
-    color: var(--dark);
-    border: none;
-    padding: 1.1rem 3rem;
-    cursor: pointer;
-    transition: all 0.3s;
-    align-self: flex-start;
-  }
-  .form-submit:hover {
-    background: var(--gold-light);
-    transform: translateY(-2px);
-  }
 
   /* FOOTER */
   footer {
@@ -1268,36 +1220,7 @@
     </div>
   </div>
 
-  <div class="contact-form reveal">
-    <div class="section-label">Send a Message</div>
-    <div class="form-row">
-      <div class="form-group">
-        <label class="form-label">First Name</label>
-        <input class="form-input" type="text" placeholder="Your first name">
-      </div>
-      <div class="form-group">
-        <label class="form-label">Last Name</label>
-        <input class="form-input" type="text" placeholder="Your last name">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Email Address</label>
-      <input class="form-input" type="email" placeholder="your@email.com">
-    </div>
-    <div class="form-group">
-      <label class="form-label">Company / Organisation</label>
-      <input class="form-input" type="text" placeholder="Your company name">
-    </div>
-    <div class="form-group">
-      <label class="form-label">Subject</label>
-      <input class="form-input" type="text" placeholder="How can we help?">
-    </div>
-    <div class="form-group">
-      <label class="form-label">Message</label>
-      <textarea class="form-textarea" rows="5" placeholder="Tell us about your project or enquiry..."></textarea>
-    </div>
-    <button class="form-submit" onclick="this.textContent='Message Sent ✓'; this.style.background='#7a8c6e'; setTimeout(()=>{this.textContent='Send Message'; this.style.background='';}, 3000);">Send Message</button>
-  </div>
+
 </section>
 
 <!-- FOOTER -->
@@ -1310,10 +1233,10 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="social-links">
-    <a href="https://www.facebook.com/HamayunPrinters/" target="_blank" class="social-link" title="Facebook">
+    <a href="https://www.facebook.com/omernraja" target="_blank" class="social-link" title="Facebook">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
     </a>
-    <a href="https://www.instagram.com/hamayunsprinters/" target="_blank" class="social-link" title="Instagram">
+    <a href="https://www.instagram.com/omernraja/" target="_blank" class="social-link" title="Instagram">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
     </a>
     <a href="https://pk.linkedin.com/company/hamayun-printers-pvt-limited" target="_blank" class="social-link" title="LinkedIn">
@@ -1332,18 +1255,11 @@
     setTimeout(() => {
       ring.style.left = e.clientX + 'px';
       ring.style.top = e.clientY + 'px';
-    }, 80);
+    }, 60);
   });
   document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      ring.style.transform = 'translate(-50%, -50%) scale(1.6)';
-      ring.style.borderColor = 'var(--gold)';
-      ring.style.opacity = '1';
-    });
-    el.addEventListener('mouseleave', () => {
-      ring.style.transform = 'translate(-50%, -50%) scale(1)';
-      ring.style.opacity = '0.6';
-    });
+    el.addEventListener('mouseenter', () => ring.classList.add('hover'));
+    el.addEventListener('mouseleave', () => ring.classList.remove('hover'));
   });
 
   // Scroll reveal
